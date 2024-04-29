@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react'
+import Main from './Components/MainComponent/Main'
+import Side from './Components/SideComponent/Side'
+import io from 'socket.io-client';
 
-function App() {
+import '../src/App.css'
+export default function App() {
+
+  const [username, setUsername] = useState('');
+    const [connectedUsers, setConnectedUsers] = useState([]);
+
+    useEffect(() => {
+        const socket = io();
+
+        // Receive username from server
+        socket.on('username', (username) => {
+            setUsername(username);
+        });
+
+        // Receive list of connected users from server
+        socket.on('all users', (users) => {
+            setConnectedUsers(users);
+        });
+
+        // Clean up the effect
+        return () => {
+            socket.disconnect();
+        };
+    }, []);
+
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <main id='AppContainer'>
+        <div id='leftSide'>
+          <Side connectedUsers={connectedUsers} />
+        </div>
+        <div id='rightSide'>
+          <Main />
+        </div>
+      </main>
+    </>
+  )
 }
-
-export default App;
