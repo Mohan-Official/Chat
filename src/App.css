@@ -1,6 +1,6 @@
 #AppContainer {
   margin: 0%;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   /* background-color: aqua; */
   display: grid;
@@ -10,11 +10,12 @@
 #leftSide {
   height: 100%;
   grid-column: 1 / span 1; /* Corrected */
-  background-color: pink;
+  background-color: black;
 }
 
 #rightSide {
   height: 100%;
+  padding: 0%;
   grid-column: 2 / span 2; /* Corrected */
-  /* background-color: red; */
+  background-color: red;
 }

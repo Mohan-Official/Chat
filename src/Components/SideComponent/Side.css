@@ -2,5 +2,105 @@
 {
     height: 100%;
     width: 100%;
-    background-color: bisque;
+    background-color: red;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+#mySection
+{
+    height: 11%;
+    width: 100%;
+    background-color: rebeccapurple;
+    /* display: flex; */
+    /* flex-direction: row; */
+}
+#otherSection
+{
+    height: 89%;
+    width: 100%;
+    background-color: #111b21;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#otherUsers
+{
+    height: 15%;
+    width: 95%;
+    background-color: #111b21;
+    border-radius: 15px 15px 15px 0px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid gray;
+    transition: 0.2s ease;
+    margin-top: 2%;
+}
+#otherUsers:hover
+{
+    background-color: #2a3942;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#otherUserImgSec
+{
+    height: 100%;
+    width: 30%;
+    /* background-color: hotpink; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#otherUserImgSec div
+{
+    height: 65%;
+    width: 60%;
+    border-radius: 100%;
+    overflow: hidden;
+}
+#otherUserImgSec div img
+{
+    height: 100%;
+    width: 100%;
+}
+#otherUserNameSec
+{
+    height: 100%;
+    width: 40%;
+    /* background-color: white; */
+    display: flex;
+    justify-content: start;
+    padding-left: 5%;
+    align-items: center;
+    color: whitesmoke;
+    opacity: 0.9;
+}
+#otherUserActiveSec
+{
+    height: 100%;
+    width: 30%;
+    /* background-color: beige; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#otherUserActiveSec span
+{
+    height: 25%;
+    width: 90%;
+    /* background-color: powderblue; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    font-weight: bolder;
+    color: whitesmoke;
+    opacity: 0.6;
+}
+.activeCircle
+{
+    color: lightgreen;
+    opacity: 1;
 }

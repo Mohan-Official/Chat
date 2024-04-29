@@ -197,9 +197,9 @@ export default function Main() {
           <FontAwesomeIcon icon={Adduser} className='chat-icon adduser'/>
         </div>
       </section>
-      <div id="messageContainer">
+      <section id="messageContainer">
         <ul id="messages"></ul>
-      </div>
+      </section>
       <form onSubmit={handleSubmit} id="form-container">
         <span id='text-icon-sec'>
           <input type="file" id="imageBtn" accept="image/*" />
