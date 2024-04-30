@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Text Length Check</title>
+<style>
+    #text-container {
+        width: 300px; /* Adjust as needed */
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+</style>
+</head>
+<body>
+
+<!-- <div id="text-container"> -->
+    <!-- Your text goes here -->
+    <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget libero magna. Nulla facilisi.
+</div> -->
+
+<p id="shortened-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis recusandae ut similique labore optio, officia tenetur corporis, porro expedita itaque nostrum quis, est exercitationem ullam molestiae quidem quam nesciunt? Iste.</p>
+
+<script>
+    const textContainer = document.getElementById('text-container');
+    const shortenedText = document.getElementById('shortened-text');
+    const maxLength = 20; // Maximum length of the text
+
+    // Check if text exceeds maximum length
+    function checkTextLength() {
+        const text = shortenedText.textContent.trim();
+        if (text.length > maxLength) {
+            shortenedText.textContent = `My name is ${text.substring(0, maxLength)}...`;
+        } else {
+            shortenedText.textContent = '';
+        }
+    }
+
+    // Initial check
+    checkTextLength();
+
+    // Check whenever the text content changes
+    textContainer.addEventListener('input', checkTextLength);
+</script>
+
+</body>
+</html>
